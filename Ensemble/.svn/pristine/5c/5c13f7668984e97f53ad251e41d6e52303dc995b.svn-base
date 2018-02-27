@@ -1,0 +1,67 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/financial_summary_invoice_inf_table"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/info_table"
+    android:stretchColumns="1,2,3,4">
+
+    <TableRow
+        android:id="@+id/financial_summary_invoice_inf_row_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        style="@style/info_header_tableRow">
+
+        <TextView
+            style="@style/headerInfoText"
+            android:layout_column="1"
+            android:layout_span="3"
+            android:text="Financial summary Invoice" />
+
+
+    </TableRow>
+    <TableRow style="@style/info_table_row_attr"  >
+
+        <TextView
+            style="@style/subHeaderInfoText"
+            android:layout_column="1"
+            android:layout_span="4"
+            android:text="Invoice Information" />
+
+
+
+    </TableRow>
+    <TableRow
+        android:background="@android:color/darker_gray"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+
+        >
+
+        <TextView
+            style="@style/headerTableText"
+            android:layout_column="1"
+            android:text="Invoice No" />
+        <TextView
+            style="@style/headerTableText"
+            android:layout_column="2"
+            android:text="Creation date" />
+        <TextView
+            style="@style/headerTableText"
+            android:layout_column="3"
+            android:text="Due date" />
+
+        <TextView
+            style="@style/headerTableText"
+            android:layout_column="4"
+            android:paddingEnd="10dp"
+            android:text="Status" />
+
+
+    </TableRow>
+
+
+
+
+</TableLayout>

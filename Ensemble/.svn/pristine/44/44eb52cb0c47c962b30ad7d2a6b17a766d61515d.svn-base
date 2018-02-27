@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="truecorp.ensemble.BillingAccountActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+            <ScrollView
+                android:id="@+id/scroll_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+                <TableLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/inv_info_table_popup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="always"
+                    android:background="@color/dark"
+                    android:maxHeight="100dp"
+                    style="@style/info_table"
+                    android:stretchColumns="2">
+
+
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="10dp">
+
+
+                        <DatePicker
+                            style="@android:style/Widget.DatePicker"
+                            android:id="@+id/date_picker_popup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_span="2"/>
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_span="2"
+                            android:weightSum="100"
+                            android:orientation="horizontal"
+                            >
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:gravity="center"
+                                >
+
+                                <Button
+                                    style="@style/button_date_picker"
+                                    android:id="@+id/ok_date_btn"
+
+                                    android:text="OK"/>
+
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:gravity="center"
+                                >
+
+                                <Button
+                                    style="@style/button_date_picker"
+                                    android:id="@+id/cancel_date_btn"
+                                    android:text="CANCEL"/>
+
+
+
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

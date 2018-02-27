@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="truecorp.ensemble.BillingAccountActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+            <ScrollView
+                android:id="@+id/scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+                <TableLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/adjustment_info_table_popup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="always"
+
+                    android:maxHeight="100dp"
+                    style="@style/info_table"
+                    android:stretchColumns="1,2">
+
+                    <TableRow
+                        android:id="@+id/adjustment_inf_row_header_popup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        style="@style/info_header_tableRow"
+                        android:background="@color/colorPrimaryDark">
+
+                        <TextView
+                            style="@style/headerInfoText"
+                            android:layout_column="1"
+                            android:layout_span="1"
+                            android:text="Adjustment Detail" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:orientation="horizontal"
+                            android:gravity="end|center_vertical"
+                            android:paddingEnd="10dp"
+                            >
+
+                            <TextView
+                                android:id="@+id/icon_close_popup"
+                                style="@style/headerInfoText"
+
+                                android:layout_width="30dp"
+                                android:textAlignment="textEnd"
+                                android:text="X" />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Date   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_date_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Level   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_level_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Reason   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_reson_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Description   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_description_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Subscriber   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_subscriber_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Amount   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_amount_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Tax   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_tax_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Total   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_total_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="CR/DR   :" />
+
+                        <TextView
+                            android:id="@+id/adjustment_cr_dr_ban_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+
+
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

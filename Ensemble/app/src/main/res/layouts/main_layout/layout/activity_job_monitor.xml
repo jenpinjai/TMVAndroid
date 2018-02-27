@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+
+    tools:context="truecorp.ensemble.JobMonitorActivity">
+
+
+    <include layout="@layout/title" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+
+            <TableLayout
+                android:id="@+id/dataTableLayoutHeader"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="0dp"
+                android:scrollbars="vertical"
+                android:stretchColumns="1,2,3"
+                android:verticalScrollbarPosition="right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray">
+
+                    <TextView
+                        style="@style/headerTableText"
+
+                        android:layout_column="1"
+                        android:text="Job name" />
+
+                    <TextView
+                        style="@style/headerTableText"
+                        android:text="Start" />
+
+                    <TextView
+                        style="@style/headerTableText"
+
+                        android:text="End" />
+
+                    <TextView
+                        style="@style/headerTableText"
+                        android:layout_width="50dp"
+                        android:text="Status" />
+
+
+                </TableRow>
+            </TableLayout>
+
+            <ScrollView
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <TableLayout
+                    android:id="@+id/dataTableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-20dp"
+                    android:scrollbars="vertical"
+                    android:stretchColumns="1,2,3"
+                    android:verticalScrollbarPosition="right"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@android:color/darker_gray"
+                        android:visibility="invisible">
+
+                        <TextView
+                            style="@style/headerTableText"
+
+                            android:layout_column="1"
+                            android:text="Job name" />
+
+                        <TextView
+                            style="@style/headerTableText"
+
+                            android:text="Start" />
+
+                        <TextView
+                            style="@style/headerTableText"
+
+                            android:text="End" />
+
+                        <TextView
+                            style="@style/headerTableText"
+                            android:layout_width="50dp"
+                            android:text="Status" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/dataRowMaster"
+                        style="@style/tableRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp">
+
+                        <TextView
+                            android:id="@+id/dataRowMasterColl1"
+                            style="@style/headerTableText"
+                            android:layout_column="1"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/dataRowMasterColl2"
+                            style="@style/headerTableText"
+
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/dataRowMasterColl3"
+                            style="@style/headerTableText"
+
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/dataRowMasterColl4"
+                            style="@style/headerTableText"
+                            android:text="" />
+
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/lineBottom"
+                        android:layout_height="1dp"
+                        android:background="#FF909090"
+                        android:visibility="invisible" />
+
+
+                </TableLayout>
+
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lineJobbutton"
+            style="@style/shadow_outer"
+            android:layout_width="match_parent"
+            android:background="@drawable/shadow_outer"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/jobButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            android:background="@color/paper_head"
+            android:orientation="vertical"
+
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp"
+            tools:layout_height="300dp">
+
+
+            <TextView
+                android:id="@+id/jobNameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textColor="@android:color/background_dark"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/horizonButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="0dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="182dp">
+
+
+                <Button
+                    android:id="@+id/startJobButton"
+                    style="@style/jobManageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/ongreenbtntouch"
+                    android:text="Start"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/stopJobButton"
+                    style="@style/jobManageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/onredbtntouch"
+                    android:text="Stop"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/startJobButton" />
+
+                <Button
+                    android:id="@+id/rerunJobButton"
+                    style="@style/jobManageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/ongreenbtntouch"
+                    android:text="Rerun"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/startJobButton" />
+
+                <Button
+                    android:id="@+id/skipJobButton"
+                    style="@style/jobManageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/onlightbluebtntouch"
+                    android:text="Skip"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/startJobButton" />
+
+                <Button
+                    android:id="@+id/holdJobButton"
+                    style="@style/jobManageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/onlightgreybtntouch"
+                    android:text="Hold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/startJobButton" />
+
+                <Button
+                    android:id="@+id/unHoldJobButton"
+                    style="@style/jobManageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/onlightgreybtntouch"
+                    android:text="Unhold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/startJobButton" />
+
+                <LinearLayout
+                    android:id="@+id/historyButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="182dp">
+
+                    <Button
+                        android:id="@+id/hitoryJobButton"
+                        style="@style/jobManageButton"
+                        android:layout_width="70dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/onbluebtntouch"
+                        android:text="History"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/logShowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            android:background="@color/paper"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+
+            <View
+                android:id="@+id/lineTextViewLogs"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF909090"
+                android:visibility="invisible" />
+
+            <ScrollView
+                android:id="@+id/scrollLogView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <HorizontalScrollView
+                    android:id="@+id/horizonLogShow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/logShowInScrollLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="182dp">
+
+                        <TextView
+                            android:id="@+id/logShow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="0dp"
+                            android:paddingBottom="1dp"
+                            android:paddingEnd="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textColor="@android:color/background_dark"
+                            app:layout_constraintBottom_toBottomOf="@+id/dataTableLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+
+                        <LinearLayout
+                            android:id="@+id/fileNameShowInScrollLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-20dp"
+                            android:orientation="vertical"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="182dp">
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">True Ensemble</string>
+    <string name="title_activity_job_monitor">JobMonitorActivity</string>
+</resources>

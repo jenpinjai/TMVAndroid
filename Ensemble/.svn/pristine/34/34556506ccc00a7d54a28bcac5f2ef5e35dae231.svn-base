@@ -1,0 +1,51 @@
+package truecorp.core.dataservice;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import truecorp.core.model.BillingAccountDto;
+import truecorp.core.model.JobControlDto;
+
+/**
+ * Created by Jennarong Pinjai on 16/12/2560.
+ */
+
+public class BillingAccountService extends DataserviceManager{
+
+
+    public List<BillingAccountDto> searchBillingAccount(String crytiria,String value) throws Exception{
+
+        try{
+
+            System.out.println("call searchBillingAccount");
+            //username = URLEncoder.encode(username,"UTF-8");
+            //password = URLEncoder.encode(password,"UTF-8");
+            String url = "http://"+domain+"/TMVExternalWebService/rest/billingAccount/searchByCriteria/"+crytiria+"/"+value;
+
+            RestTemplate restTemplate = new RestTemplate();
+            System.out.println(url);
+            ResponseEntity<BillingAccountDto[]> responseEntity =restTemplate.getForEntity(url, BillingAccountDto[].class);
+
+            List<BillingAccountDto> billList = new ArrayList<BillingAccountDto>();
+
+            for(BillingAccountDto bill : responseEntity.getBody()){
+
+                billList.add(bill);
+
+            }
+
+            return billList;
+
+        }catch(Exception ex){
+
+            throw ex;
+
+        }
+
+    }
+
+
+}

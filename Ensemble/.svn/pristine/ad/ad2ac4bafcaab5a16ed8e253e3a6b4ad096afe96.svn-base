@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="truecorp.ensemble.BillingAccountActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+            <ScrollView
+                android:id="@+id/scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+                <TableLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/create_payment_alert_table_popup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+
+                    android:maxHeight="100dp"
+                    style="@style/info_table"
+                    android:stretchColumns="2">
+
+                    <TableRow
+                        android:id="@+id/create_payment_alert_row_header_popup"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        style="@style/info_header_tableRow"
+                        android:background="@color/darkGreen">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_span="2"
+                            android:orientation="horizontal"
+                            android:gravity="end|center_vertical"
+                            android:paddingEnd="10dp"
+                            android:weightSum="100"
+                            >
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_weight="90">
+                                <TextView
+                                    style="@style/headerInfoText"
+                                    android:id="@+id/title_create_payment_alert_popup"
+                                    android:layout_width="match_parent"
+                                    android:text="Create success"
+                                    android:textSize="18dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_weight="10">
+                                <TextView
+                                    android:id="@+id/icon_close_popup"
+                                    style="@style/headerInfoText"
+
+                                    android:layout_width="30dp"
+                                    android:textAlignment="textEnd"
+                                    android:text="X" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:layout_gravity="top|right"
+                            android:text="Name   :"
+                            android:textSize="18dp"
+                            />
+
+                        <TextView
+                            style="@style/dataText"
+                            android:id="@+id/name_create_payment_success_popup"
+                            android:layout_column="2"
+                            android:text=""
+                            android:textSize="18dp"
+
+                            />
+
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:layout_gravity="top|right"
+                            android:text="Path   :"
+                            android:textSize="18dp"
+                            />
+
+                        <TextView
+                            style="@style/dataText"
+                            android:id="@+id/path_create_payment_success_popup"
+                            android:layout_column="2"
+                            android:text=""
+                            android:textSize="18dp"
+                            />
+
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:layout_gravity="top|right"
+                            android:text="Size   :"
+                            android:textSize="18dp"
+                            />
+
+                        <TextView
+                            style="@style/dataText"
+                            android:id="@+id/size_create_payment_success_popup"
+                            android:layout_column="2"
+                            android:text=""
+                            android:textSize="18dp"
+                            />
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:id="@+id/error_msg_create_payment_alert_popup"
+                            android:layout_column="1"
+                            android:layout_span="2"
+                            android:ellipsize="end"
+                            android:text=""
+                            android:textColor="@color/red_dark"
+                            android:textSize="18dp"
+                            />
+
+
+
+                    </TableRow>
+
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

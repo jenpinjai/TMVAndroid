@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+   >
+
+    <TextView
+        android:id="@+id/titleComponent"
+        style="@style/title_tab"
+        android:paddingLeft="@android:dimen/notification_large_icon_height"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userDetailTop"
+        android:layout_width="250dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="27dp"
+        android:text="name"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="41dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/backbtn"
+        android:elevation="0dp"
+        android:scaleType="fitXY"
+        android:scaleX="0.7"
+
+        android:scaleY="0.8"
+        android:src="@mipmap/icon_back_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/reloadBtn"
+        android:layout_width="61dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/backbtn"
+        android:elevation="0dp"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:src="@android:drawable/ic_popup_sync"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/toMenuBtn"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/backbtn"
+        android:scaleType="fitXY"
+        android:scaleX="0.8"
+        android:scaleY=".8"
+        android:src="@mipmap/icon_menu_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="spread" />
+
+
+
+</android.support.constraint.ConstraintLayout>

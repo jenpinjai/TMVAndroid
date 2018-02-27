@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="truecorp.ensemble.FileControlActivity">
+
+
+    <include layout="@layout/title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout">
+
+            <TableLayout
+                android:id="@+id/fileControlDataTableLayoutHeader"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="0dp"
+                android:scrollbars="vertical"
+                android:stretchColumns="1,2"
+                android:verticalScrollbarPosition="right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray"
+                    android:weightSum="5">
+
+                    <TextView
+                        style="@style/headerTableText"
+                        android:layout_width="0dp"
+                        android:layout_column="1"
+                        android:layout_weight="2.4"
+                        android:text="File Name" />
+
+                    <TextView
+                        style="@style/headerTableText"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:text="Creation Date" />
+
+                    <TextView
+                        style="@style/headerTableText"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:text="Status" />
+
+
+                </TableRow>
+            </TableLayout>
+
+            <ScrollView
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <TableLayout
+                    android:id="@+id/fileControlTableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:scrollbars="vertical"
+                    android:stretchColumns="1,2"
+                    android:verticalScrollbarPosition="right"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <!-- <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:visibility="invisible">
+
+                        <TextView
+                            style="@style/headerTableText"
+
+                            android:layout_column="1"
+                            android:text="File Name" />
+
+                        <TextView
+                            style="@style/headerTableText"
+
+                            android:layout_height="match_parent"
+                            android:text="Creation Date" />
+
+                        <TextView
+                            style="@style/headerTableText"
+                            android:layout_width="50dp"
+                            android:text="Status" />
+
+
+                    </TableRow>-->
+
+                    <TableRow
+                        android:id="@+id/fileControlDataRow"
+                        style="@style/tableRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="31dp"
+                        android:weightSum="5">
+
+                        <TextView
+                            android:id="@+id/fileControlDataRowColl1"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_column="1"
+                            android:layout_weight="2.4"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/fileControlDataRowColl2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_column="2"
+                            android:layout_weight="2"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/fileControlDataRowColl3"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_column="3"
+                            android:layout_weight="0.6"
+                            android:text="" />
+
+
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/lineBottom"
+                        android:layout_height="1dp"
+                        android:background="#FF909090"
+                        android:visibility="invisible" />
+
+
+                </TableLayout>
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detailShowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/paper"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+
+
+            <Button
+                android:id="@+id/showDetailButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hide Detail" />
+
+            <LinearLayout
+                android:id="@+id/detailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:visibility="gone">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="File Name :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailFileName"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="File Status :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailFileStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="Rec Quantity :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailRecQuantity"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="Sys Creation Date :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailSysCreationDate"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="4"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="Sys Update Date :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailSysUpdateDate"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="Operator Id :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailOperatorId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="Pgm  Name :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailPgmName"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="1dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:freezesText="false"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="3dp"
+                            android:text="Pgm Err Msg :"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/detailPgmErrMsg"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:background="@android:color/background_light"
+                            android:gravity="left|center_vertical"
+                            android:textColor="@android:color/black" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

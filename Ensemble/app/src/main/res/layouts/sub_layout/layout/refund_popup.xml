@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="truecorp.ensemble.BillingAccountActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+            <ScrollView
+                android:id="@+id/scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+                <TableLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/inv_info_table_popup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+
+                    android:maxHeight="100dp"
+                    style="@style/info_table"
+                    android:stretchColumns="2">
+
+                    <TableRow
+                        android:id="@+id/refund_row_header_popup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        style="@style/info_header_tableRow"
+                        android:background="@color/colorAccent">
+
+                        <TextView
+                            style="@style/headerInfoText"
+                            android:layout_column="1"
+                            android:layout_span="1"
+                            android:text="Refund"
+                            android:textSize="18dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:orientation="horizontal"
+                            android:gravity="end|center_vertical"
+                            android:paddingEnd="10dp"
+                            >
+
+                            <TextView
+                                android:id="@+id/icon_close_popup"
+                                style="@style/headerInfoText"
+
+                                android:layout_width="30dp"
+                                android:textAlignment="textEnd"
+                                android:text="X" />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Reason   :"
+                            android:textSize="18dp"
+                            />
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="20dp"
+                            android:layout_column="2">
+                            <LinearLayout
+                                android:background="@drawable/border_pink"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="100"
+
+                               >
+                                <Spinner
+                                    android:id="@+id/refund_reason_selected"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="100"
+                                    android:spinnerMode="dialog"
+                                    android:popupBackground="@color/white"
+                                    android:layout_marginEnd="-42dp"
+                                    android:background="@drawable/ontouched"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorAccent"
+                                    android:textAlignment="textEnd"
+                                    android:textSize="22dp"
+                                    android:text="v"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="CN   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/refund_cn_number_edit_text_popup"
+                                style="@style/edit_text_pink"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Comment   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/refund_bill_comment_text_popup"
+                                style="@style/edit_text_pink"
+                                />
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_span="2"
+                            android:layout_gravity="center"
+                            >
+                            <LinearLayout
+                                style="@style/lenear_layout_in_row"
+
+                                android:gravity="center"
+                                android:layout_marginEnd="40dp"
+                                >
+                                <Button
+                                    style="@style/payment_button"
+                                    android:id="@+id/confirm_refund_btn"
+                                    android:background="@drawable/ongreenbtntouch"
+                                    android:text="CONFIRM"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                style="@style/lenear_layout_in_row"
+
+                                android:gravity="center"
+                                >
+                                <Button
+                                    style="@style/payment_button"
+                                    android:id="@+id/cancel_refund_btn"
+                                    android:background="@drawable/onredbtntouch"
+                                    android:text="CANCEL"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </TableRow>
+
+
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

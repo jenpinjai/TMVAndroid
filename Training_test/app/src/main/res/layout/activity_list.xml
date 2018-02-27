@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jennarongpinjai.training_test.ListActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical|horizontal">
+
+        <TableLayout
+            android:id="@+id/job_list_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3"
+            >
+            <TableRow
+                android:id="@+id/job_list_row_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                style="@style/text_header"
+                android:text="Job name"
+                android:layout_column="1"
+                />
+                <TextView
+                    style="@style/text_header"
+                    android:text="Start"
+                    android:layout_column="2"
+                    />
+                <TextView
+                    style="@style/text_header"
+                    android:text="End"
+                    android:layout_column="3"
+                    />
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

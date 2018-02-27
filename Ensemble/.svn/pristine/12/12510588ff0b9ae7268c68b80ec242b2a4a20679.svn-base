@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/billing_account_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="truecorp.ensemble.BillingAccountActivity">
+
+    <include layout="@layout/title"/>
+
+    <ImageButton
+        android:id="@+id/searchButtonTop"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/backbtn"
+        android:contentDescription="open search"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/icon_search_white"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/search_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="80"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_height="100dp"
+            tools:layout_weight="5">
+
+
+            <SearchView
+                android:id="@+id/searchBillView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_radius20_red_gray"
+                android:scaleX="1"
+
+                android:scaleY="1"
+                android:visibility="visible"
+
+
+                >
+
+            </SearchView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/spinner_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Search by "
+                    android:textColor="@android:color/black" />
+
+                <Spinner
+                    android:id="@+id/search_crytiria"
+
+                    android:layout_width="170dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="0dp"
+                    android:theme="@style/dropdown"
+                    android:visibility="visible"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="159dp" />
+                oo
+                <!--<ImageView-->
+
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginEnd="0dp"-->
+                <!--android:layout_marginStart="-55dp"-->
+                <!--android:layout_weight="10"-->
+                <!--android:scaleX=".5"-->
+                <!--android:scaleY=".5"-->
+                <!--android:src="@android:drawable/arrow_down_float" />-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/search_center_btn"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/onbluebtntouch"
+                    android:text="Search"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/billing_data_panel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_weight="30">
+
+            <ScrollView
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="horizontal|vertical"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <TableLayout
+                    android:id="@+id/billing_search_result_tablelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:stretchColumns="1,2,3">
+
+                    <TableRow
+                        android:id="@+id/billing_search_result_tablerow_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@color/softGray">
+
+                        <TextView
+                            style="@style/headerTableText"
+                            android:layout_column="1"
+                            android:text="Ban" />
+
+                        <TextView
+                            style="@style/headerTableText"
+                            android:layout_column="2"
+                            android:text="Name" />
+
+                        <TextView
+                            android:id="@+id/billint_data_col3_header"
+                            style="@style/headerTableText"
+                            android:layout_column="3"
+                            android:text="Subscriber" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </ScrollView>
+
+            <View
+                android:id="@+id/lineBottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF909090"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/billing_information_panel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            android:background="@color/dark_gray"
+            android:orientation="vertical"
+            android:layout_marginBottom="0dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="0dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            tools:layout_weight="70"
+            tools:visibility="visible">
+
+            <ScrollView
+                android:id="@+id/scroll_information"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:nestedScrollingEnabled="true"
+                android:scrollbars="vertical"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/billing_information_linear_layout_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="70"
+                    android:paddingBottom="100dp"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
+                    android:weightSum="100"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TableLayout
+                        android:id="@+id/billing_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="2">
+
+                        <TableRow
+                            android:id="@+id/billing_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:text="BAN Information" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="BAN   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/ban_num_inf_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/info_table_row_attr"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="ID   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/id_inf_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="ID type   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/id_type_inf_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Name   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/name_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Subscriber   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/subscriber_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Start service date   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/start_service_date_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Billing address   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/billing_address_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Account type   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/account_type_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="BAN Status   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/ban_status_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Write off status   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/write_off_status_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Status date   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/status_date_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="AR Balance   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/ar_balance_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:id="@+id/hierachy_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_height="0dp"
+                        android:stretchColumns="1,2">
+
+                        <TableRow
+                            android:id="@+id/hierachy_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:text="Hierachy Information" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Hierachy level   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/hierachy_level_inf_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Hierachy ID   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/hierachy_id_inf_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Hierachy name   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/hierachy_name_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Hierachy effective date   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/hierachy_effective_date_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Hierachy end date   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/hierachy_end_date_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Parent BAN   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/parent_ban_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:id="@+id/financial_summary_bill_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="2">
+
+                        <TableRow
+                            android:id="@+id/financial_summary_bill_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:text="Financial summary Bill" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/subHeaderInfoText"
+                                android:layout_column="1"
+                                android:layout_span="2"
+                                android:text="Last bill summary" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Bill date   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/last_bill_date_inf_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Tax Invoice   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/tax_invoice_inf_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Due date   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/due_date_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Past due amount   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/past_due_amount_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Previous balance   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/previous_balance_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Payment amount   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/payment_amount_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Total charge   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/total_charge_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Total adjust   :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/total_adjust_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Total amount due  :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/total_amount_due_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="AR Balance  :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/ar_balance_bill_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/subHeaderInfoText"
+                                android:layout_column="1"
+                                android:layout_span="2"
+                                android:text="Last bill detail" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Document type  :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/document_type_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Status  :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/status_last_bill_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Date  :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/last_bill_date_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/dataAttrText"
+                                android:layout_column="1"
+                                android:text="Payment method  :"
+                                android:textAlignment="viewEnd" />
+
+                            <TextView
+                                android:id="@+id/payment_method_info_tv"
+                                style="@style/dataText"
+                                android:layout_column="2"
+                                android:text="" />
+
+
+                        </TableRow>
+
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:id="@+id/financial_summary_invoice_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1,2,3,4">
+
+                        <TableRow
+                            android:id="@+id/financial_summary_invoice_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:layout_span="3"
+                                android:text="Financial summary Invoice" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/subHeaderInfoText"
+                                android:layout_column="1"
+                                android:layout_span="4"
+                                android:text="Invoice Information" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/darker_gray"
+
+                            >
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="1"
+                                android:text="Invoice No" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="2"
+                                android:text="Creation date" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="3"
+                                android:text="Due date" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="4"
+                                android:paddingEnd="10dp"
+                                android:text="Status" />
+
+
+                        </TableRow>
+
+
+                    </TableLayout>
+
+
+                    <TableLayout
+                        android:id="@+id/financial_summary_payment_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1,2,3,4"
+                        >
+
+                        <TableRow
+                            android:id="@+id/financial_summary_payment_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:layout_span="3"
+                                android:text="Financial summary Payment" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr"
+
+                            >
+
+                            <TextView
+                                style="@style/subHeaderInfoText"
+                                android:layout_column="1"
+                                android:layout_span="4"
+                                android:text="Payment history" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/darker_gray"
+
+                            >
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="1"
+                                android:text="Posting date" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="2"
+                                android:text="Source" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="3"
+                                android:text="Invoice No." />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="4"
+                                android:paddingEnd="10dp"
+                                android:text="Method" />
+
+
+                        </TableRow>
+
+                    </TableLayout>
+
+
+                    <TableLayout
+                        android:id="@+id/financial_summary_subscriber_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1,2,3,4">
+
+                        <TableRow
+                            android:id="@+id/financial_summary_subscriber_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:layout_span="3"
+                                android:text="Financial summary Subscriber" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/subHeaderInfoText"
+                                android:layout_column="1"
+                                android:layout_span="4"
+                                android:text="Subscriber profile" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/darker_gray"
+
+                            >
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="1"
+                                android:text="No" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="2"
+                                android:text="Status" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="3"
+                                android:paddingEnd="10dp"
+                                android:text="Init Actv date" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="4"
+                                android:paddingEnd="10dp"
+                                android:text="Reason" />
+
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                    <TableLayout
+                        android:id="@+id/adjustment_history_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1,2,3">
+
+                        <TableRow
+                            android:id="@+id/adjustment_history_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:layout_span="2"
+                                android:text="Adjustment history" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/subHeaderInfoText"
+                                android:layout_column="1"
+                                android:layout_span="3"
+                                android:text="Information" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/darker_gray"
+
+                            >
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="1"
+                                android:text="Date" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="2"
+                                android:text="Reason" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="3"
+                                android:paddingEnd="10dp"
+                                android:text="Description" />
+
+                        </TableRow>
+
+
+                    </TableLayout>
+                    <TableLayout
+                        android:id="@+id/refund_history_inf_table"
+                        style="@style/info_table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1,2,3">
+
+                        <TableRow
+                            android:id="@+id/refund_history_inf_row_header"
+                            style="@style/info_header_tableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+
+                            <TextView
+                                style="@style/headerInfoText"
+                                android:layout_column="1"
+                                android:layout_span="2"
+                                android:text="Refund history" />
+
+
+                        </TableRow>
+
+                        <TableRow style="@style/info_table_row_attr">
+
+                            <TextView
+                                style="@style/subHeaderInfoText"
+                                android:layout_column="1"
+                                android:layout_span="3"
+                                android:text="Information" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/darker_gray"
+
+                            >
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="1"
+                                android:text="Date" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="2"
+                                android:text="Reason" />
+
+                            <TextView
+                                style="@style/headerTableText"
+                                android:layout_column="3"
+                                android:paddingEnd="10dp"
+                                android:text="Description" />
+
+                        </TableRow>
+
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

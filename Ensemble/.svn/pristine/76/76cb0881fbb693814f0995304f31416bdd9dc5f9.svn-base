@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/dialogRootLayout"
+    android:background="@android:color/white"
+    tools:context="truecorp.ensemble.BillingAccountActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+            <ScrollView
+                android:id="@+id/scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+                <TableLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/subscriber_info_table_popup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="always"
+
+                    android:maxHeight="100dp"
+                    style="@style/info_table"
+                    android:stretchColumns="1,2">
+
+                    <TableRow
+                        android:id="@+id/subscriber_inf_row_header_popup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        style="@style/info_header_tableRow"
+                        android:background="@color/colorPrimaryDark">
+
+                        <TextView
+                            style="@style/headerInfoText"
+                            android:layout_column="1"
+                            android:layout_span="1"
+                            android:text="Subscriber Detail" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:orientation="horizontal"
+                            android:gravity="end|center_vertical"
+                            android:paddingEnd="10dp"
+                            >
+
+                            <TextView
+                                android:id="@+id/icon_close_popup"
+                                style="@style/headerInfoText"
+
+                                android:layout_width="30dp"
+                                android:textAlignment="textEnd"
+                                android:text="X" />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Subscriber No.   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_no_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Status   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_status_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Status date   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_status_date_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Init Activity date   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_init_actv_date_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Reason   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_reason_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Next BAN   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_next_ban_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Next BAN move   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_next_ban_move_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Previous BAN   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_previous_ban_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Previous BAN move   :" />
+
+                        <TextView
+                            android:id="@+id/subscriber_previous_ban_move_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+
+
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

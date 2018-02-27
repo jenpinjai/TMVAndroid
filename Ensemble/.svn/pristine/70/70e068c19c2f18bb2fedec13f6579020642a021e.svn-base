@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#aaaaaa</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimarySoft">#a0adff</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorSoftOrange">#e4a022</color>
+    <color name="colorDarkOrange">#d88609</color>
+
+    <color name="greenStatus">#73DE5E</color>
+    <color name="darkGreen">#336c28</color>
+    <color name="orangeStatus">#FFB157</color>
+    <color name="grayStatus">#C0C0C0</color>
+    <color name="softGray">#ececec</color>
+    <color name="skyBlueStatus">#66FAF0</color>
+    <color name="redSoft">#ff665e</color>
+    <color name="yellowSoft">#fff830</color>
+    <color name="white">#ffffff</color>
+    <color name="paper">#fde8c4</color>
+    <color name="paper_head">#ffd389</color>
+    <color name="red_gray">#592f2b</color>
+    <color name="dark_gray">#979797</color>
+    <color name="black">#000000</color>
+    <color name="dark">#2b2b2b</color>
+    <color name="red_dark">#810c0c</color>
+</resources>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="truecorp.ensemble.CreatePaymentActivity"
+    android:id="@+id/main_create_payment_view">
+    <include
+        android:id="@+id/title_panel"
+        layout="@layout/title" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+            <ScrollView
+                android:id="@+id/scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+                <TableLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/create_payment_main_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+
+                    android:maxHeight="100dp"
+                    style="@style/info_table"
+                    android:stretchColumns="2">
+
+                    <TableRow style="@style/create_payment_table_row"
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="BAN   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <TextView
+                                android:id="@+id/create_payment_ban_edit_text"
+                                style="@style/edit_text_dark_orange"
+
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Source ID   :"
+                            android:textSize="18dp"
+                            />
+
+                        <LinearLayout
+
+                            style="@style/edit_text_side"
+                            android:paddingEnd="20dp"
+                            android:layout_column="2">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_dark_orange"
+                                android:orientation="horizontal"
+                                android:weightSum="100"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/source_id_selector"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="100"
+                                    android:spinnerMode="dialog"
+                                    android:layout_marginEnd="-42dp"
+                                    android:background="@drawable/ontouched"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorDarkOrange"
+                                    android:textAlignment="textEnd"
+                                    android:textSize="18dp"
+                                    android:text="v"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Deposit date   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <TextView
+                                android:id="@+id/create_payment_customer_payment_date_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:hint="Select date.."
+                                android:textColorHint="@color/dark"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                       >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Posting period   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <TextView
+                                android:id="@+id/create_payment_posting_period_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Receipt ID   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/create_payment_receipt_id_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:maxLength="22"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Batch No.   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/create_payment_batch_no_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:maxLength="5"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                       >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Orig amount   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/create_payment_original_amount_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:inputType="numberDecimal"
+                                android:maxLength="13"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Amount due   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/create_payment_amount_due_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:inputType="numberDecimal"
+                                android:maxLength="13"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Subscriber   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/create_payment_subscriber_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:ellipsize="end"
+                                android:maxLength="25"
+
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+                        >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Description   :"
+                            android:textSize="18dp"
+                            />
+                        <LinearLayout
+                            style="@style/edit_text_side"
+                            android:layout_column="2">
+                            <EditText
+                                android:id="@+id/create_payment_description_edit_text"
+                                style="@style/edit_text_dark_orange"
+                                android:ellipsize="end"
+
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/create_payment_table_row"
+
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_span="2"
+                            android:layout_gravity="center"
+                            >
+                            <LinearLayout
+                                style="@style/lenear_layout_in_row"
+
+                                android:gravity="center"
+                                android:layout_marginEnd="40dp"
+                                >
+                                <Button
+                                    style="@style/payment_button"
+                                    android:id="@+id/create_payment_btn"
+                                    android:background="@drawable/ongreenbtntouch"
+                                    android:text="CREATE"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                style="@style/lenear_layout_in_row"
+
+                                android:gravity="center"
+                                >
+                                <Button
+                                    style="@style/payment_button"
+                                    android:id="@+id/cancel_create_payment_btn"
+                                    android:background="@drawable/onredbtntouch"
+                                    android:text="CANCEL"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </TableRow>
+
+
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/dialogRootLayout"
+    android:background="@android:color/white"
+    tools:context="truecorp.ensemble.BillingAccountActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/dataRowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="182dp">
+            <ScrollView
+                android:id="@+id/scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintStart_toStartOf="parent">
+                <TableLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/payment_info_table_popup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="always"
+
+                    android:maxHeight="100dp"
+                    style="@style/info_table"
+                    android:stretchColumns="1,2">
+
+                    <TableRow
+                        android:id="@+id/payment_inf_row_header_popup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        style="@style/info_header_tableRow"
+                        android:background="@color/colorPrimaryDark">
+
+                        <TextView
+                            style="@style/headerInfoText"
+                            android:layout_column="1"
+                            android:layout_span="1"
+                            android:text="Payment Detail" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:orientation="horizontal"
+                            android:gravity="end|center_vertical"
+                            android:paddingEnd="10dp"
+                            >
+
+                            <TextView
+                                android:id="@+id/icon_close_popup"
+                                style="@style/headerInfoText"
+
+                                android:layout_width="30dp"
+                                android:textAlignment="textEnd"
+                                android:text="X" />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+                    <TableRow style="@style/subheader_info_table_row_attr"  >
+
+                        <TextView
+                            style="@style/subHeaderInfoText"
+                            android:background="@color/colorPrimarySoft"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_column="1"
+                            android:layout_span="2"
+                            android:text="Detail" />
+
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Posting date   :" />
+
+                        <TextView
+                            android:id="@+id/payment_posting_date_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/info_table_row_attr"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:text="Source   :"
+                            android:textAlignment="viewEnd" />
+
+                        <TextView
+                            android:id="@+id/payment_source_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Invoice number   :" />
+
+                        <TextView
+                            android:id="@+id/payment_invoice_no_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Method   :" />
+
+                        <TextView
+                            android:id="@+id/payment_method_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Posting period   :" />
+
+
+                        <TextView
+                            android:id="@+id/payment_posting_period_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Last activity   :" />
+
+                        <TextView
+                            android:id="@+id/payment_last_activity_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Original Account   :" />
+
+                        <TextView
+                            android:id="@+id/payment_original_account_detail_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Actual amount   :" />
+
+                        <TextView
+                            android:id="@+id/payment_actual_amount_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Original amount   :" />
+
+                        <TextView
+                            android:id="@+id/payment_original_amount_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/subheader_info_table_row_attr"  >
+
+                        <TextView
+                            style="@style/subHeaderInfoText"
+                            android:background="@color/colorPrimarySoft"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_column="1"
+                            android:layout_span="2"
+                            android:text="Batch of Payment" />
+
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Batch ID   :" />
+
+                        <TextView
+                            android:id="@+id/payment_batch_id_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Batch line number   :" />
+
+                        <TextView
+                            android:id="@+id/payment_batch_line_number_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Bank code   :" />
+
+                        <TextView
+                            android:id="@+id/payment_bank_code_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Bank account   :" />
+
+                        <TextView
+                            android:id="@+id/payment_bank_account_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Original Voucher   :" />
+
+                        <TextView
+                            android:id="@+id/payment_original_voucher_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="File seq  :" />
+
+                        <TextView
+                            android:id="@+id/payment_file_seq_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Payment ID   :" />
+
+                        <TextView
+                            android:id="@+id/payment_id_text_popup"
+                            style="@style/dataText"
+                            android:layout_column="2"
+                            android:text="" />
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Payment text 1   :" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            >
+                            <TextView
+                                android:id="@+id/payment_text1_text_popup"
+                                style="@style/dataText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                        </LinearLayout>
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Payment text 2   :" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            >
+                            <TextView
+                                android:id="@+id/payment_text2_text_popup"
+                                style="@style/dataText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+                        </LinearLayout>
+
+
+                    </TableRow>
+                    <TableRow style="@style/info_table_row_attr" >
+
+                        <TextView
+                            style="@style/dataAttrText"
+                            android:layout_column="1"
+                            android:textAlignment="viewEnd"
+                            android:text="Payment text 3   :" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            >
+                            <TextView
+                                android:id="@+id/payment_text3_text_popup"
+                                style="@style/dataText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+                        </LinearLayout>
+
+
+                    </TableRow>
+
+                    <TableRow style="@style/info_table_row_attr"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        >
+
+                        <LinearLayout
+                            style="@style/lenear_layout_in_row"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            >
+                            <Button
+                                style="@style/payment_button"
+                                android:background="@drawable/ongreenbtntouch"
+                                android:id="@+id/refund_payment_btn"
+                                android:text="REFUND"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            style="@style/lenear_layout_in_row"
+                            android:layout_column="2"
+                            android:gravity="center"
+                            >
+                            <Button
+                                style="@style/payment_button"
+                                android:background="@drawable/onrowtouched_dark"
+                                android:id="@+id/backout_payment_btn"
+                                android:text="BACKOUT"
+                                />
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
